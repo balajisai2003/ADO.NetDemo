@@ -333,6 +333,30 @@ namespace AOD.NetDemo
             textEmpID.Text = parEmpId.Value.ToString();
             conn.Close();
         }
+
+        private void btnGetEmpProce_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(Helper.ConnStr);
+            SqlCommand sqlCommand = new SqlCommand("GetEmps", conn);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            
+            conn.Open();
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            reader.Read();
+            MessageBox.Show(reader[0].ToString());
+            reader.NextResult();
+
+            string s = "";
+            while (reader.Read())
+            {
+                s += reader["EmpName"] + "\t" + reader["EmpSalary"] + "\t" + reader["Deptid"] + "\n";
+            }
+            MessageBox.Show(s);
+            reader.Close();
+
+            conn.Close();
+
+        }
     }
     //test
     class Emp

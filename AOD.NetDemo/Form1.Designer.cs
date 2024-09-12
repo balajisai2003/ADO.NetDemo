@@ -51,6 +51,7 @@
             this.btnGetImg = new System.Windows.Forms.Button();
             this.btnGetSalViaProce = new System.Windows.Forms.Button();
             this.btnInsertStoredProc = new System.Windows.Forms.Button();
+            this.btnGetEmpProce = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -268,11 +269,22 @@
             this.btnInsertStoredProc.UseVisualStyleBackColor = true;
             this.btnInsertStoredProc.Click += new System.EventHandler(this.btnInsertStoredProc_Click);
             // 
+            // btnGetEmpProce
+            // 
+            this.btnGetEmpProce.Location = new System.Drawing.Point(230, 393);
+            this.btnGetEmpProce.Name = "btnGetEmpProce";
+            this.btnGetEmpProce.Size = new System.Drawing.Size(100, 23);
+            this.btnGetEmpProce.TabIndex = 23;
+            this.btnGetEmpProce.Text = "GetEmpProce";
+            this.btnGetEmpProce.UseVisualStyleBackColor = true;
+            this.btnGetEmpProce.Click += new System.EventHandler(this.btnGetEmpProce_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 428);
+            this.Controls.Add(this.btnGetEmpProce);
             this.Controls.Add(this.btnInsertStoredProc);
             this.Controls.Add(this.btnGetSalViaProce);
             this.Controls.Add(this.btnGetImg);
@@ -329,6 +341,7 @@
         private System.Windows.Forms.Button btnGetImg;
         private System.Windows.Forms.Button btnGetSalViaProce;
         private System.Windows.Forms.Button btnInsertStoredProc;
+        private System.Windows.Forms.Button btnGetEmpProce;
     }
 }
 
