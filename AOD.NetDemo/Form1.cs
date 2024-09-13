@@ -349,7 +349,7 @@ namespace AOD.NetDemo
             string s = "";
             while (reader.Read())
             {
-                s += reader["EmpName"] + "\t" + reader["EmpSalary"] + "\t" + reader["Deptid"] + "\n";
+                s += reader["EmpName"] + "\t" + reader["EmpSalary"] + "\t" + reader["DeptName"] + "\n";
             }
             MessageBox.Show(s);
             reader.Close();
