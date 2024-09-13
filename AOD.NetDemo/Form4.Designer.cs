@@ -35,9 +35,9 @@
             // 
             // btnSyncExe
             // 
-            this.btnSyncExe.Location = new System.Drawing.Point(74, 51);
+            this.btnSyncExe.Location = new System.Drawing.Point(52, 52);
             this.btnSyncExe.Name = "btnSyncExe";
-            this.btnSyncExe.Size = new System.Drawing.Size(75, 23);
+            this.btnSyncExe.Size = new System.Drawing.Size(111, 23);
             this.btnSyncExe.TabIndex = 0;
             this.btnSyncExe.Text = "Sync Exe";
             this.btnSyncExe.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // btnAsyncExe
             // 
-            this.btnAsyncExe.Location = new System.Drawing.Point(74, 122);
+            this.btnAsyncExe.Location = new System.Drawing.Point(52, 110);
             this.btnAsyncExe.Name = "btnAsyncExe";
-            this.btnAsyncExe.Size = new System.Drawing.Size(75, 23);
+            this.btnAsyncExe.Size = new System.Drawing.Size(111, 23);
             this.btnAsyncExe.TabIndex = 1;
             this.btnAsyncExe.Text = "Async Exe";
             this.btnAsyncExe.UseVisualStyleBackColor = true;
@@ -55,9 +55,9 @@
             // 
             // btnAsyncWait
             // 
-            this.btnAsyncWait.Location = new System.Drawing.Point(74, 169);
+            this.btnAsyncWait.Location = new System.Drawing.Point(52, 170);
             this.btnAsyncWait.Name = "btnAsyncWait";
-            this.btnAsyncWait.Size = new System.Drawing.Size(75, 23);
+            this.btnAsyncWait.Size = new System.Drawing.Size(111, 23);
             this.btnAsyncWait.TabIndex = 2;
             this.btnAsyncWait.Text = "Async Methods";
             this.btnAsyncWait.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(217, 248);
             this.Controls.Add(this.btnAsyncWait);
             this.Controls.Add(this.btnAsyncExe);
             this.Controls.Add(this.btnSyncExe);

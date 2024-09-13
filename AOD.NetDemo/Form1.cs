@@ -281,17 +281,22 @@ namespace AOD.NetDemo
 
         private void btnGetSalViaProce_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(Helper.ConnStr);
-            SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.Connection = conn;
-            sqlCommand.CommandText = "GetSalary";
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            SqlParameter parEmpId = sqlCommand.Parameters.Add("@id", SqlDbType.Int);
-            SqlParameter parSal = sqlCommand.Parameters.Add("@salary", SqlDbType.Money);
+            //SqlConnection conn = new SqlConnection(Helper.ConnStr);
+            //SqlCommand sqlCommand = new SqlCommand();
+            //sqlCommand.Connection = conn;
+            //sqlCommand.CommandText = "GetSalary";
+            //sqlCommand.CommandType = CommandType.StoredProcedure;
+            //SqlParameter parEmpId = ("@id", SqlDbType.Int);
+            //SqlParameter parSal = sqlCommand.Parameters.Add("@salary", SqlDbType.Money);
+            SqlParameter parEmpId = new SqlParameter("@id", SqlDbType.Int);
+            SqlParameter parSal = new SqlParameter("@salary", SqlDbType.Money);
+
             parSal.Direction = ParameterDirection.Output;
             parEmpId.Value = textEmpID.Text;
-            conn.Open();
-            sqlCommand.ExecuteNonQuery();
+
+            DBUtil.ExeStrdProcedureNonQuery("GetSalary", parEmpId, parSal);
+            //conn.Open();
+            //sqlCommand.ExecuteNonQuery();
             if (parSal.Value == DBNull.Value)
             {
                 MessageBox.Show("Invalid EmpId");
@@ -301,7 +306,7 @@ namespace AOD.NetDemo
                 MessageBox.Show(parSal.Value.ToString());
             }
 
-            conn.Close();
+            //conn.Close();
         }
 
         private void btnInsertStoredProc_Click(object sender, EventArgs e)
@@ -336,12 +341,13 @@ namespace AOD.NetDemo
 
         private void btnGetEmpProce_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(Helper.ConnStr);
-            SqlCommand sqlCommand = new SqlCommand("GetEmps", conn);
-            sqlCommand.CommandType = CommandType.StoredProcedure;
+            //SqlConnection conn = new SqlConnection(Helper.ConnStr);
+            //SqlCommand sqlCommand = new SqlCommand("GetEmps", conn);
+            //sqlCommand.CommandType = CommandType.StoredProcedure;
             
-            conn.Open();
-            SqlDataReader reader = sqlCommand.ExecuteReader();
+            //conn.Open();
+            //SqlDataReader reader = sqlCommand.ExecuteReader();
+            SqlDataReader reader = DBUtil.ExeSPReader("GetEmps");
             reader.Read();
             MessageBox.Show(reader[0].ToString());
             reader.NextResult();
@@ -352,9 +358,9 @@ namespace AOD.NetDemo
                 s += reader["EmpName"] + "\t" + reader["EmpSalary"] + "\t" + reader["DeptName"] + "\n";
             }
             MessageBox.Show(s);
-            reader.Close();
+            reader.Close();//this makes connection close
 
-            conn.Close();
+           
 
         }
     }
